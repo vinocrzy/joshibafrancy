@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import shape15 from "@/images/slider/shape15.svg";
 import cover from "@/images/cover.jpg";
-import invitationbg from "@/images/slider/invitation-bg2.jpg";
+import invitationbg from "@/images/slider/bsbg.jpg";
 import corner1 from "@/images/slider/corner1.svg";
 import corner2 from "@/images/slider/corner2.svg";
 import corner3 from "@/images/slider/corner3.svg";
@@ -16,7 +16,7 @@ export default function Home() {
 
   useEffect(() => {
     const countdown = () => {
-      const eventDate = new Date(2025, 3, 4, 17, 0, 0); // April 4, 2025, 17:00:00 (5:00 PM)
+      const eventDate = new Date(2025, 4, 4, 10, 30, 0); // May 4, 2025, 10:30:00 AM
       const now = new Date();
       const difference = eventDate.getTime() - now.getTime();
 
@@ -38,23 +38,17 @@ export default function Home() {
   }, []);
 
   const handleAddToCalendar = () => {
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    if (isIOS) {
-      const inviteUrl = 'https://www.icloud.com/invites/018Q4ZRJ1OMcRCDXmwI_mAWdg';
-      window.open(inviteUrl, "_blank");
-    } else {
-      const calendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=Engagement+Ceremony+of+Vinothkanna+and+Banupriya&dates=20250404T170000Z/20250404T180000Z&details=Join+us+for+the+engagement+ceremony+of+Vinothkanna+and+Banupriya.&location=Arulmigu+Vadakasi+Amman+Kovil,+Kumanthapuram,+Kadayanallur,+Tamil+Nadu+627751&sf=true&output=xml`;
+      const calendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=Baby+Shower+Celebration&dates=20250504T103000Z/20250504T120000Z&details=Join+us+for+the+baby+shower+celebration.&location=Copper+Kitchen+Sembakkam&sf=true&output=xml`;
       window.open(calendarUrl, "_blank");
-    }
   };
 
   return (
     <>
       <Head>
-        <title>Engagement Ceremony of Vinothkanna and Banupriya</title>
+        <title>Baby Shower Celebration</title>
         <meta
           name="description"
-          content="With love and joy in our hearts, we invite you to celebrate the beginning of our forever."
+          content="With love and joy in our hearts, we invite you to celebrate the upcoming arrival of our little one."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" type="image/x-icon" />
@@ -62,11 +56,11 @@ export default function Home() {
         {/* Open Graph metadata */}
         <meta
           property="og:title"
-          content="Engagement Ceremony of Vinothkanna and Banupriya"
+          content="Baby Shower Celebration"
         />
         <meta
           property="og:description"
-          content="With love and joy in our hearts, we invite you to celebrate the beginning of our forever."
+          content="With love and joy in our hearts, we invite you to celebrate the upcoming arrival of our little one."
         />
         <meta property="og:image" content={`${cover.src}`} />
         <meta property="og:url" content="https://vinocrazy.com/" />
@@ -76,11 +70,11 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Engagement Ceremony of Vinothkanna and Banupriya"
+          content="Baby Shower Celebration"
         />
         <meta
           name="twitter:description"
-          content="With love and joy in our hearts, we invite you to celebrate the beginning of our forever."
+          content="With love and joy in our hearts, we invite you to celebrate the upcoming arrival of our little one."
         />
         <meta name="twitter:image" content={`${cover.src}`} />
         <meta name="twitter:url" content="https://x.com/itsvinocrazy" />
@@ -101,15 +95,15 @@ export default function Home() {
                     <div className="wpo-event-wrap">
                       <div className="wpo-event-item">
                         <div className="wpo-event-text">
-                          <h2>Banupriya & Vinothkanna</h2>
-                          <p>Engagement Ceremony at April 04, 2025</p>
+                          <h2>Joshiba Francy S</h2>
+                          <p>Baby Shower Celebration on May 04, 2025</p>
                           <div className="inner-shape">
                             <Image src={shape15} alt="Shape 15" />
                           </div>
                           <ul>
                             <li>
-                              Friday, 04 Apr. 2025 <br />
-                              5:00 PM – 6:00 PM
+                              Sunday, 04 May 2025 <br />
+                              10:30 AM – 12:00 PM
                             </li>
                             <li>
                               <a
@@ -121,8 +115,8 @@ export default function Home() {
                               </a>
                             </li>
                             <li>
-                              Arulmigu Vadakasi Amman Kovil , Kumanthapuram,
-                              Kadayanallur, Tamil Nadu 627751
+                            Copper Kitchen
+                            Velachery Rd, Sembakkam, Chennai, Tamil Nadu 600073
                             </li>
                             <li>
                               <strong>Countdown: {timeLeft}</strong>
@@ -131,7 +125,7 @@ export default function Home() {
                             <li>
                               <a
                                 className="popup-gmaps"
-                                href="https://maps.app.goo.gl/bbYQeZRxEhviDpj57"
+                                href="https://maps.app.goo.gl/FEoCefWbpRUiSAKB6"
                               >
                                 See Location
                               </a>

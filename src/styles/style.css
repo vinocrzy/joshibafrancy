@@ -17486,7 +17486,7 @@ a.ui-button:active, .ui-button:active,
   width: 100%;
   height: 100%;
   content: "";
-  background: rgba(0, 0, 0, 0.3);
+  /* background: rgba(0, 0, 0, 0.3); */
 }
 
 @media (max-width: 767px) {
@@ -17517,12 +17517,12 @@ a.ui-button:active, .ui-button:active,
 
 .wpo-invitation-area-s2 .wpo-event-wrap,
 .wpo-coming-soon-area .wpo-event-wrap {
-  border: 1px solid #FFF;
-  background: linear-gradient(140deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 100%);
+  /* border: 1px solid #FFF; */
+  /* background: linear-gradient(140deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 100%);
   -webkit-box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.05);
           box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.05);
   -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px); */
   padding: 30px;
   margin-top: 120px;
   max-width: 1100px;
@@ -17685,7 +17685,7 @@ a.ui-button:active, .ui-button:active,
   font-size: 30px;
   line-height: 43px;
   margin-bottom: 30px;
-  color: #5C5C5C;
+  color: #000000;
 }
 
 @media (max-width: 991px) {
@@ -17730,7 +17730,7 @@ a.ui-button:active, .ui-button:active,
   line-height: 30px;
   margin-left: 0;
   float: none;
-  color: #5C5C5C;
+  color: #000000;
 }
 
 @media (max-width: 767px) {
@@ -17756,7 +17756,7 @@ a.ui-button:active, .ui-button:active,
 .wpo-invitation-area-s2 .wpo-event-item .wpo-event-text ul li a,
 .wpo-coming-soon-area .wpo-event-item .wpo-event-text ul li a {
   font-weight: 500;
-  color: #657150;
+  color: #ef2aa1;
   position: relative;
   display: inline-block;
 }
