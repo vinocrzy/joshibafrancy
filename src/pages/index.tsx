@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import shape15 from "@/images/slider/shape15.svg";
 import cover from "@/images/cover.jpg";
 import invitationbg from "@/images/slider/bsbg.jpg";
+import mobilebg from "@/images/mobilebg.jpg";
 import corner1 from "@/images/slider/corner1.svg";
 import corner2 from "@/images/slider/corner2.svg";
 import corner3 from "@/images/slider/corner3.svg";
@@ -13,6 +14,21 @@ import shape14 from "@/images/slider/shape14.svg";
 
 export default function Home() {
   const [timeLeft, setTimeLeft] = useState<string>("");
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // Set initial state
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const countdown = () => {
@@ -26,7 +42,9 @@ export default function Home() {
       }
 
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const hours = Math.floor(
+        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
@@ -38,8 +56,8 @@ export default function Home() {
   }, []);
 
   const handleAddToCalendar = () => {
-      const calendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=Baby+Shower+Celebration&dates=20250504T103000Z/20250504T120000Z&details=Join+us+for+the+baby+shower+celebration.&location=Copper+Kitchen+Sembakkam&sf=true&output=xml`;
-      window.open(calendarUrl, "_blank");
+    const calendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=Baby+Shower+Celebration&dates=20250504T050000Z/20250504T063000Z&details=Join+us+for+the+baby+shower+celebration.&location=Copper+Kitchen+Sembakkam&sf=true&output=xml`;
+    window.open(calendarUrl, "_blank");
   };
 
   return (
@@ -54,10 +72,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" type="image/x-icon" />
 
         {/* Open Graph metadata */}
-        <meta
-          property="og:title"
-          content="Baby Shower Celebration"
-        />
+        <meta property="og:title" content="Baby Shower Celebration" />
         <meta
           property="og:description"
           content="With love and joy in our hearts, we invite you to celebrate the upcoming arrival of our little one."
@@ -68,10 +83,7 @@ export default function Home() {
 
         {/* Twitter Card metadata */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Baby Shower Celebration"
-        />
+        <meta name="twitter:title" content="Baby Shower Celebration" />
         <meta
           name="twitter:description"
           content="With love and joy in our hearts, we invite you to celebrate the upcoming arrival of our little one."
@@ -83,7 +95,9 @@ export default function Home() {
         <section
           className="wpo-invitation-area-s2"
           style={{
-            background: `url(${invitationbg.src}) no-repeat center center`,
+            background: `url(${
+              isMobile ? mobilebg.src : invitationbg.src
+            }) no-repeat center center`,
             backgroundSize: "cover",
           }}
         >
@@ -95,7 +109,14 @@ export default function Home() {
                     <div className="wpo-event-wrap">
                       <div className="wpo-event-item">
                         <div className="wpo-event-text">
-                          <h2>Joshiba Francy S</h2>
+                          <h2
+                            style={{
+                              fontFamily: "'Boldonse', sans-serif",
+                              fontSize: "25px",
+                            }}
+                          >
+                            Joshiba Francy S
+                          </h2>
                           <p>Baby Shower Celebration on May 04, 2025</p>
                           <div className="inner-shape">
                             <Image src={shape15} alt="Shape 15" />
@@ -115,8 +136,8 @@ export default function Home() {
                               </a>
                             </li>
                             <li>
-                            Copper Kitchen
-                            Velachery Rd, Sembakkam, Chennai, Tamil Nadu 600073
+                              Copper Kitchen Velachery Rd, Sembakkam, Chennai,
+                              Tamil Nadu 600073
                             </li>
                             <li>
                               <strong>Countdown: {timeLeft}</strong>
